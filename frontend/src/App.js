@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import {
+  Box,
+  Spacer,
+  VStack,
+  Flex,
+  Center,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
+import { useState } from "react";
 function App() {
+  var [status, setStatus] = useState("Nobody");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box
+        w="full"
+        h="100vh"
+        bg="#36393F"
+        px="10"
+        display="flex"
+        justifyContent="left"
+        alignItems="center"
+      >
+        <Box>
+          <Heading color="white">Live Feed</Heading>
+          <Box w="60vw" h="500px" bg="gray.200"></Box>
+        </Box>
+        <Spacer></Spacer>
+        <Box>
+          <Heading>Live Feed</Heading>
+          <Box w="30vw" h="500px" bg="gray.200">
+            <Text>Status: {status}</Text>
+          </Box>
+        </Box>
+      </Box>
     </div>
   );
 }
